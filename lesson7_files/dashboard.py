@@ -24,7 +24,7 @@ from business_metrics import (
 # Page configuration
 st.set_page_config(
     page_title="E-commerce Business Dashboard", 
-    page_icon="📊", 
+    page_icon="👟", 
     layout="wide",
     initial_sidebar_state="collapsed"
 )
@@ -493,12 +493,13 @@ def main():
     # Load data
     sales_data, orders_clean, products, customers, reviews = load_and_prepare_data()
     
-    # Header with title and date filters - ensure proper spacing
+    # Header with title - ensure proper spacing
     st.markdown("<div style='margin-bottom: 20px;'></div>", unsafe_allow_html=True)
-    col1, col2, col3 = st.columns([2, 1, 1])
+    st.title("👟 Shoe Company Sales Dashboard")
     
-    with col1:
-        st.title("📊 E-commerce Business Dashboard")
+    # Date filters below the title
+    st.markdown("### Filters")
+    col2, col3 = st.columns(2)
     
     with col2:
         # Year selection with improved visibility
